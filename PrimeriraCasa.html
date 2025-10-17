@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Casa de prestígio</title>
+  <style>
+    body {
+      font-family: 'Times New Roman';
+  margin: 0;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  background-color: #f8feff;
+    }
+
+    header {
+      background: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links { list-style: none; display: flex; }
+    .nav-links li { margin-left: 20px; }
+    .nav-links a { text-decoration: none; color: #333; font-weight: 600; }
+
+    /* Carrossel básico */
+    .carousel {
+      width: 900px;
+      max-width: 100%;
+      height: 520px;
+      overflow: hidden;
+      position: relative;
+    }
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Botões simples */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><img src="IMG/download (5).png" width="50" alt="Logo"></div>
+    <ul class="nav-links">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="Compras.html">🛒</a></li>
+    </ul>
+  </header>
+<main>
+<div class="carousel">
+  <div class="slides" id="slides">
+    <div class="slide"><img src="IMG/Casa 1/casa1areaExterna.jpg" alt="Área externa"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1banheiro.jpg" alt="Banheiro"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1closet.jpg" alt="Closet"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1cozinha.jpg" alt="Cozinha"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1cozinhainterna.jpg" alt="Cozinha interna"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1escada.jpg" alt="Escada"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1escritorio.jpg" alt="Escritório"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1fora.jpg" alt="Fachada"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1quarto.jpg" alt="Quarto"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1sala.jpg" alt="Sala"></div>
+    <div class="slide"><img src="IMG/Casa 1/casa1vinhicula.jpg" alt="Vínicula"></div>
+    </div>
+    <button class="prev" onclick="prevSlide()">❮</button>
+    <button class="next" onclick="nextSlide()">❯</button>
+  </div>
+</main>
+  <script>
+    let currentIndex = 0;
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+
+    function showSlide(index) {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      showSlide(currentIndex);
+    }
+  </script>
+  
+
+  <br>
+  <br>
+  <br>
+
+  <aside>
+<h1 style="font-family:'Times New Roman'">Casa de prestígio de 683 m² à venda São Paulo</h1>
+<h3>Descrição</h3>
+<p>Localizada em uma rua tranquila e arborizada no Alto de Pinheiros, esta residência de três pavimentos leva a assinatura da arquiteta Simone Mantovani e apresenta projeto que valoriza a integração entre os ambientes, com grandes superfícies envidraçadas e iluminação natural. O hall social conta com pé-direito duplo e porta pivotante de seis metros, dando acesso ao living integrado à sala de jantar e ao terraço voltado para o jardim com piscina e paisagismo tropical. A área externa inclui espaço gourmet com churrasqueira, grelha argentina e equipamentos profissionais. A casa dispõe ainda de sauna, sala de home theater e adega climatizada com capacidade para até 800 garrafas. A cozinha é planejada, com marcenaria sob medida e eletrodomésticos importados. No pavimento superior, um escritório é acessado por elevador panorâmico que atende todos os andares, inclusive a garagem.
+     São cinco suítes com armários planejados e projeto luminotécnico. A residência conta com sistema de automação para som, iluminação e energia solar.</p>
+
+<h1>
+Detalhes
+
+</h1>
+<P> 🛏️ Dormitórios: 5<BR>
+ 🚿 Banheiros: 5<BR>
+ 🌳 Metragem externa: 600 m²<BR>
+ 📐 Metragem total: 693 m²<BR>
+ 🆔 Código: 489329<BR>
+ 🛗 Elevador: Sim<BR>
+ 🏛️ Estilo arquitetônico: Outro<BR>
+ 🏢 Número de andares: 1<BR>
+ 🌊🌼 Serviços externos: Piscina, Jardim<BR>
+ 🔥 Serviços internos: Lareira<BR>
+ ❄️ Sistema de resfriamento: Ar condicionado<BR>
+ 🌅 Terraço: Sim<BR>
+ 🧱 Tipo de pavimento: Tátil<BR>
+🚗 Vagas na garagem: 6</P>
+
+
+</aside>
+</body>
+</html>
