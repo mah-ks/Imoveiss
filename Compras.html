@@ -66,16 +66,65 @@ nav {
     padding-top:120px;
     }
 
-    #primeiraCasa{
-        width: 300px;
+     .card {
+      display: flex;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 30px 0;
+      padding: 20px;
+      width: 90%;
+      max-width: 900px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.7s ease forwards;
+    }
 
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
-    
-    #casa{
-        display: flex;
-        top: 150px;
-        left: 150px;
+
+    .card img {
+      border-radius: 12px;
+      width: 320px;
+      height: auto;
+      object-fit: cover;
     }
+
+    .card-content {
+      margin-left: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-content h2 {
+      color: #e63946;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      margin: 6px 0;
+      line-height: 1.5;
+    }
+
+    .card-content a {
+      color: #e63946;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .card-content a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
 
  footer {
       background-color: #8f8f8f;
@@ -98,6 +147,13 @@ footer p {
 .roda{
     text-align: center;
 }
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
 
 
     </Style>
@@ -125,66 +181,43 @@ footer p {
     </nav>
   </header>
 
-  <h1 style="color: #f51313; font-family: 'Times New Roman';">Destaque de Venda</h1>
-  <br>
-<fieldset>
-<div id = "casa">
-   
-  <div>
-    <img id = "primeiraCasa" src="IMG/Casa 1/Casadeprestígio.jpg">
-  </div>      
+   <h1>Destaques de Venda</h1>
 
-  <div>
-    <p style="color: red;"><b>Casa de luxo - São Paulo </b></p>
-    <p>R$21.000.000</p>
-    <p> 683 m²<br>  5 banheiros<br>  5 quartos</p><br>
-    <p> Localizada em uma rua tranquila e arborizada no Alto de Pinheiros,<br> esta residência de três pavimentos leva a assinatura da arquiteta <br>Simone Mantovani e 
-        apresenta projeto que...
-        <a style="color: #f51313; font-family: 'Times New Roman';" href="PrimeriraCasa.html"> Ler Mais</a> </p>
-</div>
+ 
+  <div class="card">
+    <img src="IMG/Casa 1/Casadeprestígio.jpg" alt="Casa de luxo - São Paulo">
+    <div class="card-content">
+      <h2>Casa de luxo - São Paulo</h2>
+      <p><strong>R$ 21.000.000</strong></p>
+      <p>683 m² • 5 banheiros • 5 quartos</p>
+      <p>Localizada em uma rua tranquila e arborizada no Alto de Pinheiros, esta residência de três pavimentos leva a assinatura da arquiteta Simone Mantovani...</p>
+      <a href="PrimeriraCasa.html">Ler Mais →</a>
+    </div>
+  </div>
 
+  
+  <div class="card">
+    <img src="IMG/Casa 1/cobertura.jpg" alt="Cobertura de luxo - Rio de Janeiro">
+    <div class="card-content">
+      <h2>Cobertura de luxo - Rio de Janeiro</h2>
+      <p><strong>R$ 35.000.000</strong></p>
+      <p>860 m² • 4 banheiros • 10 quartos</p>
+      <p>Cobertura Tríplex Exclusiva no Edifício Chopin – Avenida Atlântica, Copacabana. Ao lado do lendário Copacabana Palace, encontra-se esta residência única...</p>
+      <a href="cobertura.html">Ler Mais →</a>
+    </div>
+  </div>
 
-</fieldset>
-<br>
-
-<fieldset>
-
-<div id = "casa">
-   
-  <div>
-    <img id = "primeiraCasa" src="IMG/Casa 1/cobertura.jpg">
-  </div>      
-
-  <div>
-    <p style="color: red;"><b> Cobertura de luxo - Rio de Janeiro  </b></p>
-    <p>R$35.000.000</p>
-    <p> 860  m²<br>  4 banheiros<br>  10 quartos</p><br>
-    <p> Cobertura Tríplex Exclusiva no Edifício Chopin – Avenida Atlântica, <br>Copacabana No endereço mais icônico do Rio de Janeiro, ao lado do<br> lendário Copacabana Palace, 
-        encontra-se esta...
-        <a style="color: #f51313; font-family: 'Times New Roman';" href="cobertura.html"> Ler Mais</a> </p>
-</div>
-
-
-</fieldset>
-<br>
-<fieldset>
-
-<div id = "casa">
-   
-  <div>
-    <img id = "primeiraCasa" src="IMG/Casa 1/ilha.jpg">
-  </div>      
-
-  <div>
-    <p style="color: red;"><b>Ilha - Cairu, Bahia  </b></p>
-    <p>R$13.000.000</p>
-    <p> 9.200  m²<br>  8 banheiros<br>  9 quartos</p><br>
-    <p> Localização: Localizada no município de Cairu, a ilha de Manguinhos<br> pertence a um arquipélago de 26 ilhas, incluindo Boipeba e Tinharé,<br> além de Garapuá, Gamboa e Galeão, Morro de...
-        <a style="color: #f51313; font-family: 'Times New Roman';" href="ilha.html"> Ler Mais</a> </p>
-</div>
-
-
-</fieldset>
+  
+  <div class="card">
+    <img src="IMG/Casa 1/ilha.jpg" alt="Ilha - Cairu, Bahia">
+    <div class="card-content">
+      <h2>Ilha - Cairu, Bahia</h2>
+      <p><strong>R$ 13.000.000</strong></p>
+      <p>9.200 m² • 8 banheiros • 9 quartos</p>
+      <p>Localizada no município de Cairu, a ilha de Manguinhos pertence a um arquipélago de 26 ilhas, incluindo Boipeba e Tinharé, além de Garapuá e Morro de São Paulo...</p>
+      <a href="ilha.html">Ler Mais →</a>
+    </div>
+  </div>
  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
  <footer>
