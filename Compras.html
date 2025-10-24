@@ -79,6 +79,60 @@ nav {
       opacity: 0;
       animation: fadeInUp 0.7s ease forwards;
     }
+  .bloco {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 30px auto;
+    padding: 20px 30px;
+    width: 90%;
+    max-width: 900px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.7s ease forwards;
+  }
+
+  .bloco:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .bloco img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .bloco h3 a {
+    color: #0077b6;
+    border-left: 4px solid #0077b6;
+    padding-left: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+  }
+
+  .bloco h3 a:hover {
+    color: #005f8f;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
 
     .card:hover {
       transform: translateY(-5px);
@@ -154,8 +208,6 @@ footer p {
 }
 
 
-
-
     </Style>
 </head>
 <body>
@@ -218,7 +270,15 @@ footer p {
       <a href="ilha.html">Ler Mais →</a>
     </div>
   </div>
- 
+
+  
+<div class="bloco">
+  <img src="IMG/24d4adaadfc54fe524399f26afba17d4.jpg" alt="Simulador de Pagamento de Casa">
+  <h3>
+    <a href="simulador.html">Simulador de Pagamento</a>
+  </h3>
+</div>
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
  <footer>
 

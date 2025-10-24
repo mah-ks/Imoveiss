@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Parcelas</title>
+    <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #dfe9f3 0%, #ffffff 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding-top: 120px;
+    }
+
+    header {
+      background: #ffffff;
+      color: #333;
+      padding: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0%;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo h1 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #007BFF; 
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #000000;
+      font-size: 2rem;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    form:hover {
+      transform: translateY(-5px);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: border 0.3s ease;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    select:focus, input[type="number"]:focus {
+      border-color: #007BFF;
+    }
+
+    #botao {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    #botao:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    #resultado {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+      white-space: pre-line;
+      font-size: 16px;
+    }
+footer {
+      background-color: #8f8f8f;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      width: 100%;
+}
+footer p {
+    margin: 0;
+    
+}
+#rodape{
+    color: #ffffff;
+    text-align: center;
+    
+}
+
+.roda{
+    text-align: center;
+}
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #ffffff50;
+      margin: 20px 0;
+      width: 90%;
+    }
+
+    </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="IMG/download (5).png" width="50" height="50" alt="Logo"></div>
+    <ul class="nav-links">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="Compras.html">🛒</a></li>
+    </ul>
+  </nav>
+</header>
+
+<h1>Simulador de Pagamento de Casa</h1>
+
+<form>
+  <label for="casa">Selecione a casa:</label>
+  <select id="casa">
+    <option value="">-- Escolha --</option>
+    <option value="21000000">Casa de luxo - São Paulo (R$ 21.000.000)</option>
+    <option value="35000000">Cobertura - Rio de Janeiro (R$ 35.000.000)</option>
+    <option value="13000000">Ilha - Bahia (R$ 13.000.000)</option>
+  </select>
+
+  <label for="parcelas">Quantidade de parcelas:</label>
+  <input type="number" id="parcelas" placeholder="Ex: 10">
+
+  <input type="button" id="botao" value="Calcular parcelas">
+
+  <span id="resultado"></span>
+</form>
+
+<script>
+  let botao = document.querySelector('#botao');
+  botao.addEventListener('click', function(){
+      let casa = Number(document.querySelector('#casa').value);
+      let parcelas = Number(document.querySelector('#parcelas').value);
+      let resultado = document.querySelector('#resultado');
+
+      if (!casa || !parcelas) {
+          resultado.innerText = "Escolha a casa e o número de parcelas.";
+          return;
+      }
+
+      let valorParcela = casa / parcelas;
+
+      resultado.innerText = `Valor total: R$ ${casa.toLocaleString('pt-BR')}
+Parcelado em ${parcelas}x de R$ ${valorParcela.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+  });
+</script>
+
+
+
+
+
+
+<br><br><br><br><br>
+
+<footer>
+  <div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: left; color: #fff; gap: 40px; padding: 20px;">
+
+    <div style="max-width: 300px;">
+      <h3 style="color: #ffffff; margin-bottom: 10px;">Atendimento</h3>
+      <p>
+        Entre em contato com nossa equipe e descubra o imóvel dos seus sonhos.<br>
+        📧 contato@alphaimoveis.com.br<br>
+        📞 (11) 99999-9999<br>
+        Horário: Segunda a Sexta, das 9h às 18h.
+      </p>
+    </div>
+
+    <div style="max-width: 300px;">
+      <h3 style="color: #ffffff; margin-bottom: 10px;">Nossa Missão</h3>
+      <p>
+        Transformar o mercado imobiliário de luxo em uma experiência única e inspiradora.<br>
+        Oferecemos imóveis que refletem estilo, personalidade, conforto e exclusividade.
+      </p>
+    </div>
+
+    <div style="max-width: 300px;">
+      <h3 style="color: #ffffff; margin-bottom: 10px;">Valores</h3>
+      <p>
+        Transparência, confiança, inovação e comprometimento.<br>
+        Acreditamos que o verdadeiro luxo está nos detalhes e na experiência de cada cliente.
+      </p>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <p id="rodape">Alpha Imóveis</p>
+  <p id="rodape">© 2025 Alpha Imóveis — Excelência, sofisticação e confiança no mercado imobiliário de alto padrão.</p>
+
+  <div class="roda">
+    <img src="IMG/face.png" width="40" height="40" alt="Facebook" onclick="alert('facebook.com/alphaimoveis')">
+    <img src="IMG/instagram_logo_icon_267526 (1).png" width="40" height="40" alt="Instagram" onclick="alert('@alpha.imoveis')">
+    <img src="IMG/localizacao.png" width="40" height="40" alt="Localização" onclick="alert('Rua Barreto Leme, 1540 – Centro, Campinas – SP, Brasil')">
+    <img src="IMG/telephone-symbol-button_icon-icons.com_73379.png" width="40" height="40" alt="Telefone" onclick="alert('(19) 4002-8922')">
+  </div>
+</footer>
+
+</body>
+</html>
